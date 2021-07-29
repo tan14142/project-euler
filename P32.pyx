@@ -18,7 +18,7 @@ cpdef unsigned solve():
 
         while digits > 0:
           digit = digits % 10
-          digits /= 10
+          digits //= 10
 
           if digit == 0:
             break

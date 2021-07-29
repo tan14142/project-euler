@@ -11,7 +11,7 @@ cpdef unsigned solve():
 
   return d_prod // n_prod
 
-cpdef bool is_curious_fraction(num, den):
+cpdef bool is_curious_fraction(unsigned num, unsigned den):
   if num % 10 == 0 or den % 10 == 0:
     return False
   return num % 10 == den // 10 and num / den == (num // 10) / (den % 10)
