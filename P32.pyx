@@ -1,4 +1,4 @@
-def solve() -> unsigned:
+cpdef unsigned solve():
   cdef unsigned digit, digits, m1, m2, prod
   cdef unsigned estimate = 5
   cdef unsigned max = 9876
@@ -29,7 +29,7 @@ def solve() -> unsigned:
 
   return sum(prods)
 
-def concat(unsigned x, unsigned y) -> unsigned:
+cpdef unsigned concat(unsigned x, unsigned y):
   cdef unsigned pow = 10
   while y >= pow:
     pow *= 10

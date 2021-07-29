@@ -1,6 +1,6 @@
 from libc.stdlib cimport calloc, malloc, free
 
-def solve(unsigned target) -> unsigned:
+cpdef unsigned solve(unsigned target):
   cdef unsigned coins[8], coin, i
   cdef unsigned* mem = <unsigned*> calloc(target + 1, (target + 1) * sizeof(unsigned))
 
