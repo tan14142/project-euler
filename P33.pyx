@@ -1,4 +1,7 @@
-from cpython cimport bool
+cdef bint is_curious_fraction(unsigned num, unsigned den):
+  if num % 10 == 0 or den % 10 == 0:
+    return False
+  return num % 10 == den // 10 and num / den == (num // 10) / (den % 10)
 
 cpdef unsigned solve():
   cdef unsigned num, den, n_prod = 1, d_prod = 1
@@ -10,8 +13,3 @@ cpdef unsigned solve():
         d_prod *= den
 
   return d_prod // n_prod
-
-cpdef bool is_curious_fraction(unsigned num, unsigned den):
-  if num % 10 == 0 or den % 10 == 0:
-    return False
-  return num % 10 == den // 10 and num / den == (num // 10) / (den % 10)

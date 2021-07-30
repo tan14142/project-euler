@@ -1,3 +1,11 @@
+cdef unsigned concat(unsigned x, unsigned y):
+  cdef unsigned pow = 10
+
+  while y >= pow:
+    pow *= 10
+
+  return x * pow + y
+
 cpdef unsigned solve():
   cdef unsigned digit, digits, m1, m2, prod
   cdef unsigned estimate = 5
@@ -28,9 +36,3 @@ cpdef unsigned solve():
           prods.add(prod)
 
   return sum(prods)
-
-cpdef unsigned concat(unsigned x, unsigned y):
-  cdef unsigned pow = 10
-  while y >= pow:
-    pow *= 10
-  return x * pow + y
